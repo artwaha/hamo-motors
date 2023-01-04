@@ -5,7 +5,9 @@ import Seo from "../components/seo";
 const IndexPage = () => {
   return (
     <Layout>
-      <span className="text-6xl text-amber-800">Content!!!!</span>
+      <span className="text-4xl text-purple-700 uppercase">
+        Contents go here!!!!
+      </span>
     </Layout>
   );
 };
