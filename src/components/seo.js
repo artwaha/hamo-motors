@@ -1,15 +1,18 @@
 import * as React from "react";
 import { useSiteMetadata } from "../hooks/use-site-metadata";
 
-const Seo = ({ pageTitle }) => {
+const Seo = ({ pageTitle, pageDescription }) => {
   const { title, description } = useSiteMetadata();
+
+  const seo = {
+    title: pageTitle !== undefined ? `${pageTitle} | ${title}` : title,
+    description: pageDescription || description,
+  };
 
   return (
     <>
-      <title>
-        {pageTitle} | {title}
-      </title>
-      <meta name="description" content={description} />
+      <title>{seo.title}</title>
+      <meta name="description" content={seo.description} />
     </>
   );
 };

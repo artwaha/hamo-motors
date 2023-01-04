@@ -7,9 +7,9 @@ const Layout = ({ children }) => {
   const { title, author, company } = useSiteMetadata();
 
   return (
-    <div className="border-4 border-dotted border-green-500 min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col">
       <Header title={title} />
-      <main className="flex-1 flex justify-center items-center">
+      <main className="flex-1 flex justify-center items-center w-full max-w-screen-lg m-auto">
         {children}
       </main>
       <Footer author={author} company={company} />

@@ -2,8 +2,8 @@ import React from "react";
 
 const Footer = ({ author, company }) => {
   return (
-    <footer className="b-purple p-6">
-      <div className="block text-center max-w-screen-lg m-auto b-red p-3">
+    <footer className="">
+      <div className="block text-center max-w-screen-lg m-auto">
         <div>
           Logo <span className="border-b border-orange-700">{company}</span>
         </div>

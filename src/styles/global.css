@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.b-red {
-  @apply border border-red-600;
+.border-out {
+  @apply border border-red-600 p-6;
 }
 
-.b-purple {
-  @apply border border-purple-600;
+.border-in {
+  @apply border border-purple-600 p-3;
 }
