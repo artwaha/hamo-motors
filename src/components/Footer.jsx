@@ -9,9 +9,9 @@ const Footer = ({ author, company }) => {
         </div>
         <div>
           <ul className="flex justify-center">
-            <li className="text-gray-400 pr-4">Twitter Icon</li>
-            <li className=" text-purple-700 pr-4">Instagram Icon</li>
-            <li>Facebook Icon</li>
+            <li className="text-green-400 pr-4">Twitter Icon</li>
+            <li className=" text-black pr-4">Instagram Icon</li>
+            <li className=" text-purple-700 pr-4">Facebook Icon</li>
           </ul>
         </div>
         <div>
