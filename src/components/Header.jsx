@@ -4,10 +4,10 @@ import ImageSlides from "./ImageSlides";
 
 const Header = () => {
   return (
-    <header className="p-6">
+    <header>
       <div className="max-w-screen-lg m-auto ">
         <div className=" flex justify-between">
-          <div>Hamo-Motors-Logo</div>
+          <div>HML</div>
           <nav>
             <ul className="flex">
               <li className="pr-8">

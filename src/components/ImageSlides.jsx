@@ -26,7 +26,6 @@ const ImageSlides = () => {
         {nodes.map((node, i) => (
           <Carousel.Item key={i}>
             <GatsbyImage
-              className="block w-full"
               alt={`Slide ${i + 1}`}
               image={node.childImageSharp.gatsbyImageData}
             />

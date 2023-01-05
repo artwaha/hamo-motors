@@ -2,10 +2,10 @@ import React from "react";
 
 const Footer = ({ author, company }) => {
   return (
-    <footer className="mt-4">
+    <footer className="mt-4 bg-black text-white p-4">
       <div className="max-w-screen-lg m-auto flex flex-col md:grid md:grid-cols-3">
         <div className="text-center">
-          <h4 className="w-fit border-b-4 m-auto mb-1">Links</h4>
+          <h5 className="w-fit border-b-4 m-auto mb-2">Links</h5>
           <ul className="p-0">
             <li>Home</li>
             <li>Services</li>
@@ -15,7 +15,7 @@ const Footer = ({ author, company }) => {
         </div>
 
         <div className="text-center">
-          <h4 className="w-fit border-b-4 m-auto mb-1">All Services</h4>
+          <h5 className="w-fit border-b-4 m-auto mb-2">All Services</h5>
           <ul className="p-0">
             <li>Car Rental</li>
             <li>Used Cars</li>
@@ -24,7 +24,7 @@ const Footer = ({ author, company }) => {
         </div>
 
         <div className="text-center">
-          <h4 className="w-fit border-b-4 m-auto mb-1">Follow Us</h4>
+          <h5 className="w-fit border-b-4 m-auto mb-2">Follow Us</h5>
           <ul className="p-0 flex justify-center">
             <li>
               <svg
