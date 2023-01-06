@@ -21,7 +21,7 @@ const ImageSlides = () => {
   const nodes = data.allFile.nodes;
 
   return (
-    <>
+    <div className="max-w-screen-lg m-auto">
       <Carousel>
         {nodes.map((node, i) => (
           <Carousel.Item key={i}>
@@ -32,7 +32,7 @@ const ImageSlides = () => {
           </Carousel.Item>
         ))}
       </Carousel>
-    </>
+    </div>
   );
 };
 
