@@ -1,97 +1,84 @@
-import { Disclosure } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 
-const navigation = [
-  { name: "Home", href: "#", current: false },
-  { name: "Services", href: "#", current: false },
-  { name: "About Us", href: "#", current: false },
-  { name: "Contact Us", href: "#", current: false },
-];
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
-export default function Navbar() {
+const Navbar = () => {
   return (
-    <Disclosure as="nav" className="bg-black">
-      {({ open }) => (
-        <>
-          <div className="mx-auto max-w-screen-lg px-2 sm:px-6 lg:px-8">
-            <div className="relative h-16 flex items-center justify-between">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                {/* Mobile menu button*/}
-                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                  <span className="sr-only">Open main menu</span>
-                  {open ? (
-                    <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
-                  ) : (
-                    <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
-                  )}
-                </Disclosure.Button>
-              </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex flex-shrink-0 items-center md:mr-auto">
-                  {/* Logo for Small screen */}
-                  <img
-                    className="block h-8 w-auto lg:hidden"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                    alt="Your Company"
-                  />
-                  {/* Logo For Big Screen */}
-                  <img
-                    className="hidden h-8 w-auto lg:block"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                    alt="Your Company"
-                  />
-                </div>
-                {/* Nav Links for M and Large Screen */}
-                <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex space-x-4">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? "bg-gray-900 text-white"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                          "px-3 py-2 rounded-md text-sm font-medium"
-                        )}
-                        aria-current={item.current ? "page" : undefined}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* Nav Menu on mobile */}
-          <Disclosure.Panel className="sm:hidden">
-            <div className="space-y-1 px-2 pt-2 pb-3">
-              {navigation.map((item) => (
-                <Disclosure.Button
-                  key={item.name}
-                  as="a"
-                  href={item.href}
-                  className={classNames(
-                    item.current
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                    "block px-3 py-2 rounded-md text-base font-medium"
-                  )}
-                  aria-current={item.current ? "page" : undefined}
-                >
-                  {item.name}
-                </Disclosure.Button>
-              ))}
-            </div>
-          </Disclosure.Panel>
-        </>
-      )}
-    </Disclosure>
+    <div className="text-gray-200">
+      <nav className="flex flex-wrap items-center justify-between w-full py-4 md:py-0 px-4 text-lg max-w-screen-lg m-auto">
+        <div>
+          <Link to="#">
+            <StaticImage
+              alt="logo"
+              src="../images/logo.svg"
+              className="object-contain"
+              width={100}
+              height={50}
+            />
+          </Link>
+        </div>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          id="menu-button"
+          className="h-6 w-6 cursor-pointer md:hidden block"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          onClick={() => {
+            document.querySelector("#menu").classList.toggle("hidden");
+          }}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+
+        <div
+          className="hidden w-full md:flex md:items-center md:w-auto"
+          id="menu"
+        >
+          <ul className="pt-4 text-base text-gray-700 md:flex md:justify-between md:pt-0 px-0">
+            <li>
+              <Link
+                className="md:p-4 py-2 block hover:text-hamo_yellow hover:underline no-underline text-gray-700"
+                to="#"
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="md:p-4 py-2 block hover:text-hamo_yellow hover:underline no-underline text-gray-700"
+                to="#"
+              >
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="md:p-4 py-2 block hover:text-hamo_yellow hover:underline no-underline text-gray-700"
+                to="#"
+              >
+                Contact Us
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="md:p-4 py-2 block hover:text-hamo_yellow hover:underline  no-underline text-gray-700"
+                to="#"
+              >
+                Blog
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
   );
-}
+};
+
+export default Navbar;

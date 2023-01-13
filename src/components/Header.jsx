@@ -4,11 +4,11 @@ import Navbar from "./Navbar";
 
 const Header = () => {
   return (
-    <header>
+    <header className="font-roboto">
       <Navbar />
       <ImageSlides />
     </header>
   );
-};
+  };
 
 export default Header;

@@ -5,7 +5,17 @@ module.exports = {
     "./src/components/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        hamo_yellow: "#F6AB1B",
+        hamo_red: "#ED2024",
+        hamo_bg: "#E8ECEE",
+      },
+      fontFamily: {
+        montserrat: ["Montserrat", "sans - serif"],
+        roboto: ["Roboto", "sans - serif"],
+      },
+    },
   },
   plugins: [],
   // corePlugins: {
